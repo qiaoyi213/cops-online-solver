@@ -20,19 +20,19 @@
                   <router-link to="/vcp" class="nav-link">Vertex Cover</router-link>
                 </li>
                 <li class="nav-item active">
-                  <router-link to="/" class="nav-link">01 Knapsack</router-link>
+                  <router-link to="/01kp" class="nav-link">01 Knapsack</router-link>
                 </li>
                 <li class="nav-item active">
-                  <router-link to="/" class="nav-link">Graph Coloring</router-link>
+                  <router-link to="/gcp" class="nav-link">Graph Coloring</router-link>
                 </li>
                 <li class="nav-item active">
-                  <router-link to="/" class="nav-link">Hamiltonian Cycle</router-link>
+                  <router-link to="/hcp" class="nav-link">Hamiltonian Cycle</router-link>
                 </li>
                 <li class="nav-item active">
-                  <router-link to="/" class="nav-link">Travelling Salesperson</router-link>
+                  <router-link to="/tsp" class="nav-link">Travelling Salesperson</router-link>
                 </li>
                 <li class="nav-item active">
-                  <router-link to="/" class="nav-link">Job Shop Scheduling</router-link>
+                  <router-link to="/jsp" class="nav-link">Job Shop Scheduling</router-link>
                 </li>
               </ul>
           </div>
