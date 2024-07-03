@@ -16,11 +16,18 @@ async function handleSubmit() {
     }
     
     
-    
     const result = await solveSSP(requestData)
-    console.log(result);
-    sspBestSample.value = result["data"]
     
+    var answer = new Array()
+    
+    for(var i = 0;i<inpSet.value.split(',').length;i++){
+        
+        if(result.data[`x${i}`]){
+            answer.push(inpSet.value.split(',')[i])
+        }
+    }
+    
+    sspBestSample.value = "One of fessible answer is " + answer;
 }
 </script>
 
@@ -32,12 +39,10 @@ async function handleSubmit() {
             <label>
                 <textarea v-model="inpSet" placeholder="1,2,3,4,5"></textarea>
             </label>
-            <p>{{ inpSet }}</p>
             <p>Please input the target</p>
             <label>
                 <input v-model="target" placeholder="10">
             </label>
-            <p>{{ target }}</p>
             <button type="submit">Submit</button>
         </form>
         <div>
@@ -49,7 +54,13 @@ async function handleSubmit() {
 
 <style>
 .ssp{
-    padding-top: 64px;
+    top: 64px;
+    left: 10px; 
+    padding: 10px;
+    width: 640px;
+    height: 400px;
+    position: relative;
+    border-radius: 25px;
     text-align: left;
     background-color:darkgoldenrod;
 }
