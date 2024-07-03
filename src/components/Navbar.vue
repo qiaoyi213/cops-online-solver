@@ -7,12 +7,33 @@
    
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <router-link to="/" class="nav-link">Home</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="/ssp" class="nav-link">Subset Sum</router-link>
-              </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Home</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/ssp" class="nav-link">Subset Sum</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/mcp" class="nav-link">Max Cut</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/vcp" class="nav-link">Vertex Cover</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">01 Knapsack</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Graph Coloring</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Hamiltonian Cycle</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Travelling Salesperson</router-link>
+                </li>
+                <li class="nav-item active">
+                  <router-link to="/" class="nav-link">Job Shop Scheduling</router-link>
+                </li>
               </ul>
           </div>
       </nav>

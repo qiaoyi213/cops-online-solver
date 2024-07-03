@@ -1,24 +1,30 @@
 import config from './config.json';
+import axios from 'axios';
 
 export async function solveSSP(requestData) {
-    try {
-        console.log(JSON.stringify(requestData))
-        const response = await fetch(`http://${config.apiBaseURL}/cops/ssp/`, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        })
-        console.log(response)
-        if (!response.ok) {
-            throw new Error('Network response was not ok')
+    const url = `http://${config.apiBaseURL}/cops/ssp`;
+    const customConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         }
-        
-        const data = await response.json()
-        return data.result // 假設 API 返回的結果字段為 result
-    } catch (error) {
-        console.error('There was a problem with the fetch operation:', error)
-        throw error
-    }
+    };
+    
+    const response = await axios.post(url, JSON.stringify(requestData), customConfig);
+    console.log(response.data);
+    return response;   
+}
+
+export async function solveMCP(requestData) {
+    const url = `http://${config.apiBaseURL}/cops/mcp`;
+    const customConfig = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
+    };
+    console.log(requestData);
+    const response = await axios.post(url, JSON.stringify(requestData), customConfig);
+    //console.log(response.data);
+    return response;
 }

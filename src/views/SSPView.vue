@@ -16,19 +16,17 @@ async function handleSubmit() {
     }
     
     
-    try {
-        const result = await solveSSP(requestData)
-        sspBestSample.value = result
-    } catch (error) {
-        sspBestSample.value = 'Error submitting data'
-    }
+    
+    const result = await solveSSP(requestData)
+    console.log(result);
+    sspBestSample.value = result["data"]
+    
 }
 </script>
 
 <template>
     <Navbar></Navbar>
     <div class="ssp">
-        <h1>Here is body of Subset sum problem</h1>
         <form @submit.prevent="handleSubmit">
             <p>Please input the Set divided by comma or space</p>
             <label>
@@ -47,7 +45,7 @@ async function handleSubmit() {
         </div>
     </div>
 </template>
-ㄋ
+
 
 <style>
 .ssp{
