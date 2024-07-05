@@ -48,6 +48,11 @@ const router = createRouter({
       path: '/jsp',
       name: 'jsp',
       component: () => import('../views/JSPView.vue')
+    },
+    {
+      path: '/network',
+      name: 'network',
+      component: () => import('../components/network.vue')
     }
   ]
 })
