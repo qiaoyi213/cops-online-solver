@@ -1,11 +1,37 @@
 <template>
     <div>
       <Navbar />
-      <div id="networkGraph">
-        <textarea v-model="graphInput" placeholder="Enter graph data in 'u v weight' format, one edge per line"></textarea>
-        <button @click="handleSubmit">Submit</button>
-        <p>{{ mcpBestSample }}</p>
-        <div id="container"></div>
+      <div class="mcp">
+        <h1 id="-maximum-cut">最大割Maximum Cut</h1>
+        <p>最大割問題（Maximum Cut Problem）是一個經典的組合優化問題。給定一個無向圖，問題的目的是將圖的頂點集分成兩個子集，使得在這兩個子集之間的邊的數量最大化。這個問題在計算機科學、運籌學和圖論等領域具有重要的研究價值。</p>
+        <h2 id="-">最大割問題的實際應用</h2>
+        <h3 id="-">社交網絡分析</h3>
+        <p>在社交網絡分析中，最大割問題可以用來識別網絡中的社群結構。通過將社交網絡分割成兩部分，可以發現網絡中的強連接和弱連接，這有助於理解網絡中的互動模式和信息傳播路徑。</p>
+        <h3 id="vlsi-">VLSI設計</h3>
+        <p>在超大型積體電路（VLSI）設計中，最大割問題可以用來優化電路佈局。通過將電路中的元件分割成兩部分，可以最小化電路中信號線的長度和數量，從而提高電路的性能和可靠性。</p>
+        <h3 id="-">資料聚類</h3>
+        <p>在資料科學中，最大割問題可以用來進行資料聚類。通過將資料點分割成兩個子集，可以發現資料中的潛在結構和模式，這有助於進行後續的資料分析和模型訓練。</p>
+        <h3 id="-">圖像分割</h3>
+        <p>在圖像處理中，最大割問題可以用來進行圖像分割。通過將圖像中的像素分割成兩個區域，可以識別圖像中的目標物體和背景，這有助於進行圖像識別和目標檢測。</p>
+        <h3 id="-">運輸網絡優化</h3>
+        <p>在運輸網絡中，最大割問題可以用來優化交通流量。通過將交通網絡分割成兩部分，可以最小化交通擁堵和提高運輸效率，這有助於城市交通管理和規劃。</p>
+        <h3 id="-">通訊網絡設計</h3>
+        <p>在通訊網絡中，最大割問題可以用來設計網絡拓撲結構。通過將網絡節點分割成兩部分，可以最小化通訊成本和提高網絡可靠性，這有助於構建高效的通訊系統。</p>
+        <h3 id="-">資源分配</h3>
+        <p>在資源分配中，最大割問題可以用來優化資源的分配策略。通過將資源分割成兩部分，可以最小化資源的浪費和提高分配效率，這有助於實現最佳的資源利用率。</p>
+        <h3 id="-">生物網絡分析</h3>
+        <p>在生物信息學中，最大割問題可以用來分析生物網絡結構。通過將生物網絡分割成兩部分，可以發現生物系統中的關鍵基因和蛋白質，這有助於理解生物過程和疾病機制。</p>
+        
+
+        <vue-latex :expression="'H(x)=\\sum_{(u,v)\\in E}w_{u,v}(-x_u-x_v+2x_u x_v)'" display-mode />
+        <h3 id="-">演示</h3>
+        你可以在下方輸入
+        <div id="networkGraph">
+          <textarea v-model="graphInput" placeholder="Enter graph data in 'u v weight' format, one edge per line"></textarea>
+          <button @click="handleSubmit">Submit</button>
+          <p>{{ mcpBestSample }}</p>
+          <div id="container"></div>
+        </div>
       </div>
     </div>
   </template>
@@ -139,6 +165,16 @@
   </script>
   
   <style scoped>
+  .mcp {
+    top: 64px;
+    left: 10px; 
+    padding: 10px;
+    width: 640px;
+    height: 400px;
+    position: relative;
+    border-radius: 25px;
+    text-align: left;
+  }
   #networkGraph {
     top: 100px;
     padding: 100px;
